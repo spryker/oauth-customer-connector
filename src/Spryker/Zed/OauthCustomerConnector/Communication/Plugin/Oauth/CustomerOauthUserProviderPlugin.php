@@ -29,6 +29,7 @@ class CustomerOauthUserProviderPlugin extends AbstractPlugin implements OauthUse
      */
     public function accept(OauthUserTransfer $oauthUserTransfer): bool
     {
+        //add check to check correct client
         if ($oauthUserTransfer->getGrantType() !== OauthCustomerConnectorConfig::GRANT_TYPE_PASSWORD) {
             return false;
         }
