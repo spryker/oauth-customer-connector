@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\OauthScopeTransfer;
 
 interface OauthCustomerConnectorToOauthFacadeInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\OauthScopeTransfer $oauthScopeTransfer
-     *
-     * @return \Generated\Shared\Transfer\OauthScopeTransfer
-     */
     public function saveScope(OauthScopeTransfer $oauthScopeTransfer): OauthScopeTransfer;
 
     /**
@@ -28,18 +23,8 @@ interface OauthCustomerConnectorToOauthFacadeInterface
      */
     public function saveClient(OauthClientTransfer $oauthClientTransfer): OauthClientTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\OauthScopeTransfer $oauthScopeTransfer
-     *
-     * @return \Generated\Shared\Transfer\OauthScopeTransfer|null
-     */
     public function findScopeByIdentifier(OauthScopeTransfer $oauthScopeTransfer): ?OauthScopeTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\OauthClientTransfer $oauthClientTransfer
-     *
-     * @return \Generated\Shared\Transfer\OauthClientTransfer|null
-     */
     public function findClientByIdentifier(OauthClientTransfer $oauthClientTransfer): ?OauthClientTransfer;
 
     /**

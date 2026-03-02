@@ -9,8 +9,5 @@ namespace Spryker\Zed\OauthCustomerConnector\Business\Installer;
 
 interface OauthCustomerScopeInstallerInterface
 {
-    /**
-     * @return void
-     */
     public function install(): void;
 }

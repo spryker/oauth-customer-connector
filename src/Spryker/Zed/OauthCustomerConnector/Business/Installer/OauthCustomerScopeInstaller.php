@@ -23,10 +23,6 @@ class OauthCustomerScopeInstaller implements OauthCustomerScopeInstallerInterfac
      */
     protected $oauthCustomerConnectorConfig;
 
-    /**
-     * @param \Spryker\Zed\OauthCustomerConnector\Dependency\Facade\OauthCustomerConnectorToOauthFacadeInterface $oauthFacade
-     * @param \Spryker\Zed\OauthCustomerConnector\OauthCustomerConnectorConfig $oauthCustomerConnectorConfig
-     */
     public function __construct(
         OauthCustomerConnectorToOauthFacadeInterface $oauthFacade,
         OauthCustomerConnectorConfig $oauthCustomerConnectorConfig
@@ -35,9 +31,6 @@ class OauthCustomerScopeInstaller implements OauthCustomerScopeInstallerInterfac
         $this->oauthCustomerConnectorConfig = $oauthCustomerConnectorConfig;
     }
 
-    /**
-     * @return void
-     */
     public function install(): void
     {
         $customerScopes = $this->getCustomerScopes();

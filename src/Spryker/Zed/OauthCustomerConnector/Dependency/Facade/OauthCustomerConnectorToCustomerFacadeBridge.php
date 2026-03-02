@@ -26,31 +26,16 @@ class OauthCustomerConnectorToCustomerFacadeBridge implements OauthCustomerConne
         $this->customerFacade = $customerFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     *
-     * @return bool
-     */
     public function tryAuthorizeCustomerByEmailAndPassword(CustomerTransfer $customerTransfer): bool
     {
         return $this->customerFacade->tryAuthorizeCustomerByEmailAndPassword($customerTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     *
-     * @return \Generated\Shared\Transfer\CustomerTransfer
-     */
     public function getCustomer(CustomerTransfer $customerTransfer): CustomerTransfer
     {
         return $this->customerFacade->getCustomer($customerTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CustomerCriteriaTransfer $customerCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\CustomerResponseTransfer
-     */
     public function getCustomerByCriteria(CustomerCriteriaTransfer $customerCriteriaTransfer): CustomerResponseTransfer
     {
         return $this->customerFacade->getCustomerByCriteria($customerCriteriaTransfer);

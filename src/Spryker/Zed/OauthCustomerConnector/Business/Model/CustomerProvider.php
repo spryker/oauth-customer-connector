@@ -46,11 +46,6 @@ class CustomerProvider implements CustomerProviderInterface
         $this->oauthCustomerIdentifierExpanderPlugins = $oauthCustomerIdentifierExpanderPlugins;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\OauthUserTransfer $oauthUserTransfer
-     *
-     * @return \Generated\Shared\Transfer\OauthUserTransfer
-     */
     public function getCustomerOauthUser(OauthUserTransfer $oauthUserTransfer): OauthUserTransfer
     {
         $customerTransfer = (new CustomerTransfer())
@@ -74,11 +69,6 @@ class CustomerProvider implements CustomerProviderInterface
             ->setIsSuccess(true);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\OauthUserTransfer $oauthUserTransfer
-     *
-     * @return \Generated\Shared\Transfer\OauthUserTransfer
-     */
     public function getCustomerImpersonationOauthUser(OauthUserTransfer $oauthUserTransfer): OauthUserTransfer
     {
         $oauthUserTransfer->setIsSuccess(false);
@@ -106,11 +96,6 @@ class CustomerProvider implements CustomerProviderInterface
             ->setIsSuccess(true);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     *
-     * @return \Generated\Shared\Transfer\CustomerIdentifierTransfer
-     */
     protected function executeOauthCustomerIdentifierExpanderPlugins(CustomerTransfer $customerTransfer): CustomerIdentifierTransfer
     {
         $customerIdentifierTransfer = (new CustomerIdentifierTransfer())

@@ -30,9 +30,6 @@ class OauthCustomerConnectorFacadeTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function testGetCustomerShouldReturnCustomerWhenCredentialsMatch(): void
     {
         // Arrange
@@ -47,9 +44,6 @@ class OauthCustomerConnectorFacadeTest extends Unit
         $this->assertTrue($oauthUserTransfer->getIsSuccess(), 'Customer must be authorized by valid credentials.');
     }
 
-    /**
-     * @return void
-     */
     public function testGetCustomerShouldReturnFailureCustomerWhenCredentialsNotMatch(): void
     {
         // Arrange
@@ -64,9 +58,6 @@ class OauthCustomerConnectorFacadeTest extends Unit
         $this->assertFalse($oauthUserTransfer->getIsSuccess(), 'Customer must not be authorized by invalid credentials.');
     }
 
-    /**
-     * @return void
-     */
     public function testGetCustomerImpersonationOauthUserShouldReturnCustomerCustomerExists(): void
     {
         // Arrange
@@ -79,9 +70,6 @@ class OauthCustomerConnectorFacadeTest extends Unit
         $this->assertTrue($oauthUserTransfer->getIsSuccess(), 'Customer must be authorized when the customer by the customer reference exists.');
     }
 
-    /**
-     * @return void
-     */
     public function testGetCustomerImpersonationOauthUserShouldReturnFailureCustomerWhenCredentialsNotMatch(): void
     {
         // Arrange
@@ -95,9 +83,6 @@ class OauthCustomerConnectorFacadeTest extends Unit
         $this->assertFalse($oauthUserTransfer->getIsSuccess(), 'Customer must not be authorized when the customer is not found by the customer reference.');
     }
 
-    /**
-     * @return void
-     */
     public function testGetScopesShouldReturnScopeListForRequest(): void
     {
         // Arrange
@@ -110,9 +95,6 @@ class OauthCustomerConnectorFacadeTest extends Unit
         $this->assertNotEmpty($scopes, 'Customer scopes must be returned.');
     }
 
-    /**
-     * @return void
-     */
     public function testGetCustomerImpersonationScopesShouldReturnScopeList(): void
     {
         // Arrange
@@ -125,9 +107,6 @@ class OauthCustomerConnectorFacadeTest extends Unit
         $this->assertNotEmpty($scopes, 'Customer impersonation scopes must be returned.');
     }
 
-    /**
-     * @return void
-     */
     public function testGetCustomerImpersonationScopesWithDefaultShouldReturnScopeList(): void
     {
         // Arrange

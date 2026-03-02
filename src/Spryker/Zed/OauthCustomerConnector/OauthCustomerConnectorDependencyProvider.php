@@ -38,11 +38,6 @@ class OauthCustomerConnectorDependencyProvider extends AbstractBundleDependencyP
      */
     public const PLUGINS_OAUTH_CUSTOMER_IDENTIFIER_EXPANDER = 'PLUGINS_OAUTH_CUSTOMER_IDENTIFIER_EXPANDER';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideBusinessLayerDependencies(Container $container): Container
     {
         $container = $this->addCustomerFacade($container);
@@ -53,11 +48,6 @@ class OauthCustomerConnectorDependencyProvider extends AbstractBundleDependencyP
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCustomerFacade(Container $container): Container
     {
         $container->set(static::FACADE_CUSTOMER, function (Container $container) {
@@ -67,11 +57,6 @@ class OauthCustomerConnectorDependencyProvider extends AbstractBundleDependencyP
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addOauthFacade(Container $container): Container
     {
         $container->set(static::FACADE_OAUTH, function (Container $container) {
@@ -81,11 +66,6 @@ class OauthCustomerConnectorDependencyProvider extends AbstractBundleDependencyP
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addUtilEncodingService(Container $container): Container
     {
         $container->set(static::SERVICE_UTIL_ENCODING, function (Container $container) {
@@ -95,11 +75,6 @@ class OauthCustomerConnectorDependencyProvider extends AbstractBundleDependencyP
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addOauthCustomerIdentifierExpanderPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_OAUTH_CUSTOMER_IDENTIFIER_EXPANDER, function () {

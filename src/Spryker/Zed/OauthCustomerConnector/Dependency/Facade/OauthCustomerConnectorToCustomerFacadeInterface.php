@@ -13,24 +13,9 @@ use Generated\Shared\Transfer\CustomerTransfer;
 
 interface OauthCustomerConnectorToCustomerFacadeInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     *
-     * @return bool
-     */
     public function tryAuthorizeCustomerByEmailAndPassword(CustomerTransfer $customerTransfer): bool;
 
-    /**
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     *
-     * @return \Generated\Shared\Transfer\CustomerTransfer
-     */
     public function getCustomer(CustomerTransfer $customerTransfer): CustomerTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\CustomerCriteriaTransfer $customerCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\CustomerResponseTransfer
-     */
     public function getCustomerByCriteria(CustomerCriteriaTransfer $customerCriteriaTransfer): CustomerResponseTransfer;
 }

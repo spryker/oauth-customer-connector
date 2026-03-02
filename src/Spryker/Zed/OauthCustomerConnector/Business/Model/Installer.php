@@ -27,10 +27,6 @@ class Installer implements InstallerInterface
      */
     protected $oauthCustomerConnectorConfig;
 
-    /**
-     * @param \Spryker\Zed\OauthCustomerConnector\Dependency\Facade\OauthCustomerConnectorToOauthFacadeInterface $oauthFacade
-     * @param \Spryker\Zed\OauthCustomerConnector\OauthCustomerConnectorConfig $oauthCustomerConnectorConfig
-     */
     public function __construct(
         OauthCustomerConnectorToOauthFacadeInterface $oauthFacade,
         OauthCustomerConnectorConfig $oauthCustomerConnectorConfig
@@ -107,11 +103,6 @@ class Installer implements InstallerInterface
         return false;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\OauthClientTransfer $oauthClientTransfer
-     *
-     * @return bool
-     */
     protected function isExistOauthClient(OauthClientTransfer $oauthClientTransfer): bool
     {
         return $this->oauthFacade->findClientByIdentifier($oauthClientTransfer) !== null;

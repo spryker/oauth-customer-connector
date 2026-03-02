@@ -27,9 +27,6 @@ use Spryker\Zed\OauthCustomerConnector\OauthCustomerConnectorDependencyProvider;
  */
 class OauthCustomerConnectorBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\OauthCustomerConnector\Business\Model\CustomerProviderInterface
-     */
     public function createCustomerProvider(): CustomerProviderInterface
     {
         return new CustomerProvider(
@@ -39,9 +36,6 @@ class OauthCustomerConnectorBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\OauthCustomerConnector\Business\Model\ScopeProviderInterface
-     */
     public function createScopeProvider(): ScopeProviderInterface
     {
         return new ScopeProvider($this->getConfig());
@@ -57,9 +51,6 @@ class OauthCustomerConnectorBusinessFactory extends AbstractBusinessFactory
         return new Installer($this->getOauthFacade(), $this->getConfig());
     }
 
-    /**
-     * @return \Spryker\Zed\OauthCustomerConnector\Business\Installer\OauthCustomerScopeInstallerInterface
-     */
     public function createOauthCustomerScopeInstaller(): OauthCustomerScopeInstallerInterface
     {
         return new OauthCustomerScopeInstaller(
@@ -68,33 +59,21 @@ class OauthCustomerConnectorBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\OauthCustomerConnector\Dependency\Facade\OauthCustomerConnectorToCustomerFacadeInterface
-     */
     public function getCustomerFacade(): OauthCustomerConnectorToCustomerFacadeInterface
     {
         return $this->getProvidedDependency(OauthCustomerConnectorDependencyProvider::FACADE_CUSTOMER);
     }
 
-    /**
-     * @return \Spryker\Zed\OauthCustomerConnector\Dependency\Facade\OauthCustomerConnectorToOauthFacadeInterface
-     */
     public function getOauthFacade(): OauthCustomerConnectorToOauthFacadeInterface
     {
         return $this->getProvidedDependency(OauthCustomerConnectorDependencyProvider::FACADE_OAUTH);
     }
 
-    /**
-     * @return \Spryker\Zed\OauthCustomerConnector\OauthCustomerConnectorConfig
-     */
     public function getModuleConfig(): OauthCustomerConnectorConfig
     {
         return $this->getConfig();
     }
 
-    /**
-     * @return \Spryker\Zed\OauthCustomerConnector\Dependency\Service\OauthCustomerConnectorToUtilEncodingServiceInterface
-     */
     public function getUtilEncodingService(): OauthCustomerConnectorToUtilEncodingServiceInterface
     {
         return $this->getProvidedDependency(OauthCustomerConnectorDependencyProvider::SERVICE_UTIL_ENCODING);
