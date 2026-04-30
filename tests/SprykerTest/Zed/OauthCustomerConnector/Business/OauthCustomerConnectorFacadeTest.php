@@ -34,7 +34,7 @@ class OauthCustomerConnectorFacadeTest extends Unit
     {
         // Arrange
         $oauthUserTransfer = new OauthUserTransfer();
-        $oauthUserTransfer->setUsername('spencor.hopkin@spryker.com')
+        $oauthUserTransfer->setUsername('spencor.hopkin@acme.com')
             ->setPassword('change123');
 
         // Act
@@ -48,7 +48,7 @@ class OauthCustomerConnectorFacadeTest extends Unit
     {
         // Arrange
         $oauthUserTransfer = new OauthUserTransfer();
-        $oauthUserTransfer->setUsername('spencor.hopkin@spryker.com')
+        $oauthUserTransfer->setUsername('spencor.hopkin@acme.com')
             ->setPassword('change1233');
 
         // Act
